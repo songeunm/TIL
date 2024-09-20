@@ -1,3 +1,5 @@
+[Velog](https://velog.io/@semoon/RDBMS%EC%99%80-SQL)
+
 ## 관계형 데이터베이스 (RDBMS)
 
 구조화된 데이터를 저장하고 질의할 수 있도록 해주는 스토리지

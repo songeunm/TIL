@@ -1,3 +1,5 @@
+[Velog](https://velog.io/@semoon/Cloud%EC%99%80-AWS)
+
 ## Cloud
 
 컴퓨팅 자원을 네트워크를 통해 서비스 형태로 사용하는 것

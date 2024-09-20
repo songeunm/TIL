@@ -1,3 +1,5 @@
+[Velog](https://velog.io/@semoon/SQL-%EA%B8%B0%EC%B4%88)
+
 ## SQL 기본
 
 - 다수의 SQL문은 세미콜론으로 구분
