@@ -108,19 +108,19 @@
     ```
     
 - 레코드 수정
-    - `INSERT INTO`
+    - `INSERT INTO`<br>
         
         레코드를 추가
         
-    - `UPDATE FROM`
+    - `UPDATE FROM`<br>
         
         레코드의 필드 값 수정
         
-    - `DELETE FROM`
+    - `DELETE FROM`<br>
         
         레코드를 삭제
         
-        - vs. `TRUNCATE`
+        - vs. `TRUNCATE`<br>
             
             `DELETE FROM` 은 조건 지정이 가능, 속도 느림
             `TRUNCATE` 는 조건 지정 불가능, 모든 레코드 삭제, 속도 빠름
@@ -147,25 +147,25 @@
 
 테이블에서 레코드를 읽어온다.
 
-- `WHERE`
+- `WHERE`<br>
     
     레코드 선택 조건을 지정
     
     컬럼 이름 대신 `*` 를 넣으면 모든 컬럼을 선택한다.
     
-- `LIMIT`
+- `LIMIT`<br>
     
     레코드의 수를 제한
     
     `ORDER BY` 와 자주 함께 사용된다.
     
-- `DISTINCT`
+- `DISTINCT`<br>
     
     레코드 중복 제거
     
     SELECT에서 선택한 컬럼 이름 앞에 붙여 해당 컬럼의 중복을 제거한다.
     
-- 집계함수
+- 집계함수<br>
     
     COUNT, SUM, AVG, MAX, MIN 등
     
@@ -173,7 +173,7 @@
     
     NULL은 집계되지 않는다.
     
-- `CASE WHEN`
+- `CASE WHEN`<br>
     
     필드값을 조건에 따라 변환
     
@@ -185,7 +185,7 @@
     END AS 필드이름
     ```
     
-- `NULL`
+- `NULL`<br>
     
     값이 존재하지 않음을 나타내는 상수
     
@@ -207,38 +207,36 @@
 NULL은 카운트되지 않음
 
 - ex)
-    - `SELECT COUNT(1) FROM count_test`
+    - `SELECT COUNT(1) FROM count_test`<br>
         
         각각의 레코드에서 1을 받음 → 7
         
-    - `SELECT COUNT(0) FROM count_test`
+    - `SELECT COUNT(0) FROM count_test`<br>
         
         각각의 레코드에서 0을 받음 → 7
         
-    - `SELECT COUNT(NULL) FROM count_test`
+    - `SELECT COUNT(NULL) FROM count_test`<br>
         
         각각의 레코드에서 NULL을 받음 → 0
         
-    - `SELECT COUNT(value) FROM count_test`
+    - `SELECT COUNT(value) FROM count_test`<br>
         
         각각의 레코드에서 value 값을 받음 → 6
         
-    - `SELECT COUNT(DISTINCT value) FROM count_test`
+    - `SELECT COUNT(DISTINCT value) FROM count_test`<br>
         
         각각의 레코드에서 중복을 제거한 value 값을 받음 → 4
-        
-    
+      
+  <img src=https://velog.velcdn.com/images/semoon/post/c4817955-60f8-4e72-96cd-2d0f7aace6fd/image.png width=20%>
     ⇒ 어떤 값을 세는지에 주의
     
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/173cc3e0-a209-4b1a-a6c9-8bfdcc4bb4f3/30c886fc-fdcc-4dd1-9ed9-dd59929e4c78/image.png)
 
 
 ### WHERE
 
 레코드 선택 조건 지정
 
-- `IN` · `NOT IN`
+- `IN` · `NOT IN`<br>
     
     값이 어떤 값들 집합에 포함되는지(포함되지 않는지) 확인
     
@@ -247,7 +245,7 @@ NULL은 카운트되지 않음
     WHERE channel = 'Google' OR channel = 'Youtube'
     ```
     
-- `LIKE` , `ILIKE`
+- `LIKE` , `ILIKE`<br>
     
     문자열이 어떤 포맷에 맞는지 확인
     
@@ -261,36 +259,36 @@ NULL은 카운트되지 않음
     WHERE channel LIKE '%o%'
     ```
     
-- `BETWEEN`
+- `BETWEEN`<br>
     
     DATE 타입의 경우 특정 기한에 해당하는지 확인
     
 - STRING Functions
-    - `LEFT(str, N)`
+    - `LEFT(str, N)`<br>
         
         str에서 처음을 1번째로 N번째 문자를 반환
         
-    - `REPLACE(str, exp1, exp2)`
+    - `REPLACE(str, exp1, exp2)`<br>
         
         str에서 exp1을 찾아 exp2로 변환
         
-    - `UPPER(str)`
+    - `UPPER(str)`<br>
         
         str을 전부 대문자로 변환
         
-    - `LOWER(str)`
+    - `LOWER(str)`<br>
         
         str을 전부 소문자로 변환
         
-    - `LEN(str)`
+    - `LEN(str)`<br>
         
         str의 길이 반환
         
-    - `LPAD(str, N, exp)` , `RPAD(str, N, exp)`
+    - `LPAD(str, N, exp)` , `RPAD(str, N, exp)`<br>
         
         str의 길이가 N보다 작으면 왼쪽·오른쪽에 exp를 채워 패딩을 추가
         
-    - `SUBSTRING(str, N1, N2)`
+    - `SUBSTRING(str, N1, N2)`<br>
         
         str에서 처음을 1번째로 N1번째부터 N2개의 문자를 반환
         
@@ -301,11 +299,11 @@ NULL은 카운트되지 않음
 
 - 기준 컬럼을 여러개 지정할 수 있다.
 - SELECT 에 명시된 컬럼의 순서를 사용할 수 있다. (1부터 시작)
-- `ASC` 는 오름차순(default), `DESC` 는 내림차순
+- `ASC` 는 오름차순(default), `DESC` 는 내림차순<br>
     
     `ASC` / `DESC` 는 컬럼 뒤에 붙여준다.
     
-- **NULL값은 가장 큰 값으로 인식**하여 정렬
+- **NULL값은 가장 큰 값으로 인식**하여 정렬<br>
     
     변경하고싶다면 `NULL FIRST` / `NULL LAST` 를 통해 지정이 가능하다.
     
@@ -313,33 +311,42 @@ NULL은 카운트되지 않음
 ### 타입 변환
 
 - DATE Conversion
-    - 타임존 변환
+    - 타임존 변환<br>
         
         `CONVERT_TIMEZONE('America/Los_Angeles', ts)`
         
-    - `DATE_TRUNC(interval, time_column)`
+    - `DATE_TRUNC(datepart, time_column)`<br>
         
-        interval까지만 표현하도록 변환
+        datepart까지만 표현하도록 변환<br>
         
-        interval은 second, minute, hour, day, week, month, quarter, year, decade 등 가능
+        datepart은 second, minute, hour, day, week, month, quarter, year, decade 등 가능
         
-    - `EXTRACT(interval from time_column)` , `DATE_PART(interval, time_column)`
+    - `EXTRACT(datepart from time_column)` , `DATE_PART(interval, time_column)`<br>
         
-        interval만을 추출
+        datepart만을 추출<br>
         
-        `EXTRACT` 는 Oracle
+        `EXTRACT` 는 Oracle<br>
         
         `DATE_PART` 는 PostgreSQL
         
-    - `DATEDIFF(seperator, start_time_column, end_time_column)`
+    - `DATEDIFF(seperator, start_time_column, end_time_column)`<br>
         
-        start_time_column과 end_time_column의 차이를 seperator를 기준으로 계산
+        start_time_column과 end_time_column의 차이를 seperator를 기준으로 계산<br>
         
         seperator는 year(yy), quarter(qq), month(mm), day(dd), week(wk), hour(m), minute(n), secod(s) 등 가능
         
-    - `DATEADD`
-    - `GET_CURRENT`
+    - `DATEADD(datepart, N, time_column)`<br>
+        
+        time_column에서 N만큼의 datepart를 더해 반환
+        
+    - `GET_CURRENT`<br>
         
         현재 시각을 반환
         
-- TO_CHAR / TO_TIMESTAMP
+- `TO_CHAR` / `TO_TIMESTAMP`<br>
+    
+    숫자나 시간을 문자열로, 문자열을 날짜시간 타입으로 변경
+    
+- Type Casting
+    - `column_name::type`
+    - `CAST(column_name as type)`
