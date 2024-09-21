@@ -1,3 +1,5 @@
+[Velog](https://velog.io/@semoon/%ED%95%B4%EC%8B%9C)
+
 ## 정의와 성질
 
 key에 대응되는 value를 저장하는 자료구조
